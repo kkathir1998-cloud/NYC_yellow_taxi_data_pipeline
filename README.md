@@ -261,7 +261,7 @@ Observed in one successful run. These are not guarantees.
 ## 12. Repo Structure
 
 ```text
-nyc-taxi-databricks-lakehouse/
+NYC_yellow_taxi_data_pipeline/
 ├── README.md
 ├── notebooks/
 │   ├── 01_bronze
