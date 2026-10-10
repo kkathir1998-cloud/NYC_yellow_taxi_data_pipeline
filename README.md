@@ -40,52 +40,7 @@ Some records have timestamps slightly outside the month in the file name. The pi
 
 ## 3. Architecture
 
-```text
-NYC TLC Yellow Taxi Parquet
-            |
-            v
-      Incoming Volume
-            |
-            v
-+-----------------------------+
-|           Bronze            |
-| Auto Loader, Delta          |
-| Source lineage              |
-| Schema rescue handling      |
-+-------------+---------------+
-              |
-              v
-+-----------------------------+
-|           Silver            |
-| Transformations             |
-| Data-quality validation     |
-| Quality quarantine          |
-| Rescue quarantine           |
-+-------------+---------------+
-              |
-              v
-+-----------------------------+
-|            Gold             |
-| Daily taxi metrics          |
-| Streaming aggregation       |
-| foreachBatch + MERGE        |
-+-------------+---------------+
-              |
-              v
-+-----------------------------+
-|         Monitoring          |
-| Row reconciliation          |
-| Job Run ID, PASS / FAIL     |
-+-----------------------------+
-```
-
-**Databricks Job:** `NYC_Taxi_ETL_Pipeline` (manual run with **Run Now**, Serverless compute)
-
-```text
-nyc_bronze -> nyc_silver -> nyc_gold -> pipeline_monitoring
-```
-
----
+![Architecture](screenshots/NYC_Architecture.png)
 
 ## 4. Tables
 
@@ -210,10 +165,6 @@ GROUP BY quarantine_reason
 ORDER BY rows DESC;
 -->
 
-| Quarantine reason | Rows |
-|---|---:|
-| _(add from your query)_ | |
-
 ---
 
 ## 10. Performance
@@ -268,8 +219,7 @@ NYC_yellow_taxi_data_pipeline/
 │   ├── 02_silver
 │   ├── 03_gold
 │   └── 04_pipeline_monitoring
-└── docs/
-    └── screenshots/
+└── screenshots/
 ```
 
 ---
