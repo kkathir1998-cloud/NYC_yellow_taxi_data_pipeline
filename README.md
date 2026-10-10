@@ -223,8 +223,11 @@ NYC_yellow_taxi_data_pipeline/
 ```
 
 ---
+## 13. Output screenshot
+![Output](screenshots/Pipeline_monitor.jpg)
 
-## 13. Future Improvements
+
+## 14. Future Improvements
 
 - Add a watermark for late-arriving data
 - Confirm a business key, then add deduplication
