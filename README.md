@@ -156,17 +156,6 @@ The Job Run ID is passed from the Job as `{{job.run_id}}` and used in SQL as `:r
 7,124,755 = 4,835,094 + 2,289,661 + 0   ->   PASS
 ```
 
-### Why records were quarantined
-
-<!-- Add the real split here from this query:
-SELECT quarantine_reason, COUNT(*) AS rows
-FROM workspace.nyc_taxi.silver_quality_quarantine
-GROUP BY quarantine_reason
-ORDER BY rows DESC;
--->
-
----
-
 ## 10. Performance
 
 Observed in one successful run. These are not guarantees.
@@ -236,4 +225,4 @@ NYC_yellow_taxi_data_pipeline/
 
 ---
 
-**Status: Project 1 complete.**
+**Status: Complete.**
